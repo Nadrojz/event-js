@@ -124,12 +124,14 @@ allCardsParent.insertBefore(lastCard, allCardsParent.children[0])
 
 // Fonctionnalité 8
 
-// let btnPath2 = jumboPath.getElementsByTagName("a")[0]
-//
-// btnPath2.addEventListener("click", function(event){
-//   event.preventDefault()
-//   let allCardsParent = document.getElementsByClassName("row")[1]
-//   let lastCard = allCardsParent.lastElementChild
-//   let insertLeft = lastCard.nextSibling
-//   allCardsParent.insertBefore(insertLeft, allCardsParent.last)
-// });
+let btnPath2 = jumboPath.getElementsByTagName("a")[0]
+
+btnPath2.addEventListener("click", function(event){
+  event.preventDefault()
+  let allCardsParent = document.getElementsByClassName("row")[1]
+  let lastCard = allCardsParent.lastElementChild
+  let firstCard = allCardsParent.firstElementChild
+  let familySize = allCardsParent.childNodes.length
+  console.log(allCardsParent.childNodes);
+  allCardsParent.insertBefore(firstCard, allCardsParent.children[(familySize)])
+});
